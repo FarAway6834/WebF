@@ -7,7 +7,12 @@ export const WFDI = Object.freeze({set: v => document.head.innerText = `<wfdi sr
 
 // --- fw ---
 
-export class WebFVaribable {}
+const current = x => {WFDI.set(x); return x};
+const WebFVaribable = x => new Proxy({x}, {get = (ob, op) => {
+	if (prop === Symbol.toPrimitive) { return hint => (hint === "number" ? ob.value : `${ob.value}`); }
+	if ("add sub mul div".split().includes(op)) { return y => WebFVaribable(current((op === "add" ? ob.value + y : op === "sub" ? ob.value - y : op === "mul" ? ob.value * y : Math.floor(ob.value / y))); }
+	return ob[prop];
+}});
 
 // --- - ---
 
