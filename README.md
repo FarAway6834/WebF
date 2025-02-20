@@ -9,3 +9,5 @@ esolang that using +-×÷^ and function to web `pure function **formular** progr
 
 it's not pure funtional it's *pure function **formular** functional.*
 and you can make WebFDomInterFace to use WebF with JS but webf hate JS so don't do. use ~Haskell~ client to use WebF as web function.
+
+# WAAAAAAAARN : WebFVaribable dosen't coded. because I am eating lunch and I am lazy
