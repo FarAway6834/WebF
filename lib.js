@@ -9,8 +9,8 @@ export const DIV = document.createElement('div');
 export const searchParams = new URLSearchParams(location.search);
 export const WFDI = Object.freeze({set: v => document.head.innerText = `<wfdi src = "${v}" />`, get: (doc) => doc.head.children[0].attribute.src, loader: doc => {DIV.innerHTML = doc; return DIV;}, load: res => this.get(this.loader(res))});
 
-export const 
-GETWORK(src => WFDI.set(URL.createObjectURL(new Blob([`from \{f\} import "https://FarAway6834.github.io/webf/lib.js"; ${src.replace(/\b((webfs?|argv|param):.*?)\b/gim, "f('$1')")}`).replace(/×/gm, '*').replace(/÷/gm, '/')], {type : 'text/javascript'});)));
+export const compile
+GETWORK(src => WFDI.set(URL.createObjectURL(new Blob([`import \{f\} from "https://FarAway6834.github.io/webf/lib.js"; ${src.replace(/\b((webfs?|argv|param):.*?)\b/gim, "f('$1')")}`).replace(/×/gm, '*').replace(/÷/gm, '/')], {type : 'text/javascript'});)));
 
 export class WebF extends HTMLElement { constructor() { super(); } connectedCallback() { GETWORK(this.attribute.href); } }
 export deferapp = () => customElements.define('webf', WebF);
